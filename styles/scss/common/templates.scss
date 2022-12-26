@@ -1,0 +1,60 @@
+@import "variables.scss";
+
+// Fonts
+%spaceMonoH1 {
+    font-size: 56px;
+    font-family: $spaceMonoFF;
+    letter-spacing: -2.5px;
+    line-height: 56 / 56 * 100%;
+}
+%spaceMonoH2 {
+    font-size: 48px;
+    font-family: $spaceMonoFF;
+    letter-spacing: -2.14px;
+    line-height: 48 / 48 * 100%;
+}
+%spaceMonoH3 {
+    font-size: 40px;
+    font-family: $spaceMonoFF;
+    line-height: 48 / 40 * 100%;
+    letter-spacing: -1.79px;
+}
+%spaceMonoH4 {
+    font-size: 24px;
+    font-family: $spaceMonoFF;
+    line-height: 28 / 24 * 100%;
+    letter-spacing: -1.07px;
+}
+
+
+%btnStyles {
+    width: 180px;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $darkYellow;
+    border: 1px solid $darkYellow;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    cursor: pointer;
+    &:hover {
+        background: none;
+        color: $darkYellow;
+        transition: .5s;
+    }
+}
+
+%links {
+    color: $dimGrey;
+    &:hover {
+        color: $darkNavy;
+        transition: .5s;
+    }
+}
+
+%commonStyles {
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+}

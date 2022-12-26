@@ -1,0 +1,163 @@
+// Importing templates
+@import "common/templates.scss";
+// Importing variables
+@import "common/variables.scss";
+// Importing media
+@import "common/media.scss";
+body.lock {
+    @include breakPoint($md) {
+        overflow: hidden;
+    }
+}
+header.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 2;
+    }
+    & .header__container {
+        & .header__body {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 96px;
+            @include breakPoint($md) {
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+            }
+            & .header__logo {
+                position: relative;
+                z-index: 3;
+                @include breakPoint ($md) {
+                    width: 80px;
+                    height: 25px;
+                    margin-left: 30px;
+                }
+                & img {
+                    display: block;
+                    max-width: 100%;
+                }
+            }
+            & .header__burger {
+                display: none;
+                @include breakPoint($md) {
+                    display: block;
+                    position: relative;
+                    z-index: 3;
+                    width: 30px;
+                    height: 20px;
+                    &::before, 
+                    &::after {
+                        content: '';
+                        background: $darkYellow;
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        transition: .3s;
+                    }
+                    &::before {
+                        top: 0;
+                    }
+                    & span {
+                        content: '';
+                        background: $darkYellow;
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 3px;
+                        top: 9px;
+                        transition: .3s;
+                    }
+                    &::after {
+                        bottom: 0;
+                    }
+                }
+            }
+            @include breakPoint($md) {
+                & .header__burger.active::before {
+                    transform: rotate(45deg);
+                    top: 9px;
+                }
+                & .header__burger.active::after {
+                    transform: rotate(-45deg);
+                    bottom: 9px;
+                }
+                & .header__burger.active span {
+                    transform: scale(0);
+                }
+            }
+            & .header__menu {
+                padding: 0 0 0 58px;
+                @include breakPoint($md) {
+                    position: fixed;
+                    top: 0;
+                    left: -100%;
+                    width: 50%;
+                    height: 100%;
+                    background: $darkYellow;
+                    padding: 90px 0 0 0;
+                    transition: .3s;
+                    overflow: auto;
+                }
+                & .header__list {
+                    display: flex;
+                    position: relative;
+                    z-index: 5;
+                    @include breakPoint($md) {
+                        color: #fff;
+                        display: block;
+                        margin: 0 15px;
+                        & :not(:last-child) {
+                            padding: 0 0 22px 0;
+                        }
+                    }
+                    & :not(:last-child) {
+                        margin: 0 32px 0 0;
+                    }
+                    & .header__link {
+                        text-transform: uppercase;
+                        @include breakPoint($md) {
+                            font-size: 20px;
+                            color: #fff;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            & .header__menu.active {
+                left: 0;
+            }
+            & .header__button {
+                z-index: 3;
+                flex: 1 1 auto;
+                display: flex;
+                justify-content: flex-end;
+                & .header__button-item {
+                    @include breakPoint($md) {
+                        width: 150px;
+                        height: 45px;
+                        font-size: 15px ;
+                        // margin: 0 40px 0 0;
+                    }
+                    @include breakPoint($xs) {
+                        width: 120px;
+                        height: 40px;
+                        font-size: 12px ;
+                    }
+                }
+            }
+        }
+    }
+}

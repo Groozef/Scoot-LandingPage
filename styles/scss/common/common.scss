@@ -1,0 +1,38 @@
+html, body {
+    @extend %commonStyles;
+}
+a {
+    @extend %links;
+}
+.btn {
+    @extend %btnStyles;
+}
+
+.logo:hover {
+    opacity: .8;
+    transition: .3;
+}
+/* ====== Technical class ====== */
+._container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px; /*So to speak, security paddings*/
+    box-sizing: content-box;
+}
+
+/*====== WRAPPER ======*/
+.wrapper {
+    min-height: 100%;
+    // overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

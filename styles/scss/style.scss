@@ -1,0 +1,19 @@
+// !==== IMPORTING files ====
+// Common styles
+@import "common/common.scss";
+// Header block styles
+@import "header.scss";
+// Main block styles
+@import "main.scss";
+// Footer block styles
+@import "footer.scss";
+// Importing templates 
+@import "common/templates.scss";
+// Importing a style zeroing file
+@import "common/nullstyle.scss";
+// Importing variables
+@import "common/variables.scss";
+// Importing media
+@import "common/media.scss";
+// IMPORTING Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Space+Mono:wght@700&display=swap');
